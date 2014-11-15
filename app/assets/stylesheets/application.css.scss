@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+@import "bootstrap_customize";
+
+body {
+  background: #eee;
+}
+
+.text-hide-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
