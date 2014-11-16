@@ -17,7 +17,7 @@
         <% if login? %>
           
         <% else %>
-          <li><a href="#">Sign up</a></li>
+          <li><a href='<%= signup_path(:return_to => params[:return_to] || return_to_path(request.fullpath)) %>'>Sign up</a></li>
           <li><a href="#">Sign in</a></li>
         <% end %>
       </ul>

@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def login?
     false 
   end
+  
+  def store_location(path)
+    session[:return_to] = path
+  end
 end
