@@ -1,0 +1,31 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sign in</h3>
+          </div>
+
+          <div class="panel-body">
+            <% login = params[:user].try(:[], :login) %>
+            <%= form_tag signin_path %>
+              <div class="form-group">
+                <%= label_tag login %>
+                <%= text_field_tag 'user[login]', login, placeholder: 'User or Email', tabindex: 1, class: 'form-control', autofocus: login.blank? %>
+              </div>
+
+              <div class="form-group">
+                <%= label_tag 'passwrod' %>
+                <%= password_field_tag 'user[password]', nil, placeholder: 'Password', tabindex: 2, class: 'form-control', autofocus: login.blank? %>
+              </div>
+
+              <%= submit_tag 'Sign in', class: 'btn btn-success', tabindex: 5 %>
+            <hr>
+            <a href="#"> Forgot password </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
