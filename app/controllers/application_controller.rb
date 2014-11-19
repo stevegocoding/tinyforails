@@ -61,4 +61,10 @@ class ApplicationController < ActionController::Base
     cookies.delete(:remember_token)
   end
   
+  def logout
+    session.delete(:user_id)
+    @current_user = nil 
+    forget_me
+  end
+  
 end

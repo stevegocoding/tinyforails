@@ -12,7 +12,6 @@
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="<%= root_path %>">Tiny Forum on Rails</a>
-        <i class="fa fa-caret-down"></i>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
@@ -21,8 +20,8 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               <%= image_tag current_user.gravatar_url, class: 'img-circle img-avatar' %>
               <%= current_user.name %>
+              <i class="fa fa-caret-down"></i>
             </a>
-           
             <ul class="dropdown-menu dropdown-menu-right">
               <li>
                 <a href="user_root_path(username: current_user.username)">Profile</a>
@@ -41,7 +40,7 @@
               </li>
               <li class="divider"></li>
               <li>
-                <a href="#" data-method="delete">Logout</a>
+                <a href="<%= logout_path %>" data-method="delete">Logout</a>
               </li>
             </ul>
           </li>
