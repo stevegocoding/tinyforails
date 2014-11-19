@@ -12,9 +12,39 @@
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="<%= root_path %>">Tiny Forum on Rails</a>
+        <i class="fa fa-caret-down"></i>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <% if login? %>
+        <% if signed_in? %>
+          <li class="dropdown">
+            <!-- User's avatar image -->
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <%= image_tag current_user.gravatar_url, class: 'img-circle img-avatar' %>
+              <%= current_user.name %>
+            </a>
+           
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li>
+                <a href="user_root_path(username: current_user.username)">Profile</a>
+              </li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Likes</li>
+              <li>
+                <a href="#">Topics</a>
+              </li>
+              <li>
+                <a href="#">Comments</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">Settings</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#" data-method="delete">Logout</a>
+              </li>
+            </ul>
+          </li>
           
         <% else %>
           <li><a href='<%= signup_path(:return_to => params[:return_to] || return_to_path(request.fullpath)) %>'>Sign up</a></li>

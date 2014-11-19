@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
   
+  include Gravtastic
+  gravtastic secure: true, default: 'wavatar', rating: 'G', size: 48
+  mount_uploader :avatar, AvatarUploader
+  
   has_secure_password
   
   validates :username, uniqueness: {case_sensitive: false}, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }

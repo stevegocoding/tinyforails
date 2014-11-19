@@ -87,5 +87,12 @@ group :development do
   gem 'capistrano-rvm', '~> 0.1.1'
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rails', '~> 1.0.0'
+  
+  # Debugging
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+  
 end
 
