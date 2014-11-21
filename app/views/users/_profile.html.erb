@@ -1,0 +1,24 @@
+<div class="panel user-profile">
+  <div class="panel-body">
+    <div class="user-profile-avatar">
+      <%= image_tag user.gravatar_url(size: 96), class: 'img-rounded' %>
+    </div>
+
+    <div class="user-profile-name">
+      <%= user.name %>
+      <span class="text-muted"><%= "@#{user.username}" %></span>
+    </div>
+
+    <div class="user-profile-bio">
+      <%= simple_format user.bio %>
+    </div>
+
+    <% if signed_in? && user == current_user %>
+      <div class="panel-footer clearfix">
+        <div class="pull-right">
+          <a class="btn btn-default" href="#">Edit Profile</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

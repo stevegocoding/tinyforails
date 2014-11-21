@@ -1,3 +1,24 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+.user-profile {
+  background: white; 
+  text-align: center;
+}
+
+.user-profile-avatar {
+  margin: ($line-height-computed / 2) 0;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.user-profile-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: $line-height-computed / 2;
+}
